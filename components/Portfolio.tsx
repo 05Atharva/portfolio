@@ -32,7 +32,7 @@ const Portfolio = () => {
         "AWS EC2 honeypots for threat intelligence gathering",
         "Lightweight WAF with SQLi/XSS protection and rate limiting"
       ],
-      github: "https://github.com",
+      github: "https://github.com/05Atharva/ARTEMIS",
       featured: true
     },
     {
@@ -47,7 +47,7 @@ const Portfolio = () => {
         "Real-time cloud data transmission via ThingSpeak",
         "SMS alert system using Twilio API integration"
       ],
-      github: "https://github.com"
+      github: "https://github.com/05Atharva/Harvest-Health"
     },
     {
       title: "ResponseForge",
@@ -61,7 +61,7 @@ const Portfolio = () => {
         "PDF export in under 2 minutes",
         "92% relevance rating in enterprise simulations"
       ],
-      github: "https://github.com"
+      github: "https://github.com/05Atharva/ResponseForge"
     },
     {
       title: "Automotive Part QC Classifier",
