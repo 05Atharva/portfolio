@@ -287,7 +287,7 @@ const Portfolio = () => {
                   <a href="https://github.com/05Atharva" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-cyan-400 transition-colors">
                     <Github size={28} />
                   </a>
-                  <a href="www.linkedin.com/in/atharvakanawade" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-cyan-400 transition-colors">
+                  <a href="https://linkedin.com/in/atharvakanawade" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-cyan-400 transition-colors">
                     <Linkedin size={28} />
                   </a>
                   <a href="mailto:atharvakanawade@gmail.com" className="text-gray-400 hover:text-cyan-400 transition-colors">
@@ -786,7 +786,7 @@ const Portfolio = () => {
                   <motion.a
                     {...fadeInUp}
                     transition={{ delay: 0.1 }}
-                    href="www.linkedin.com/in/atharvakanawade"
+                    href="https://linkedin.com/in/atharvakanawade"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`p-6 rounded-xl ${
