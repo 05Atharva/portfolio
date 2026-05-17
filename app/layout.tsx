@@ -2,44 +2,47 @@ import './globals.css'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Atharva Kanawade | Security-Aware AI Engineer',
-  description: 'Portfolio of Atharva Kanawade - Cybersecurity & Machine Learning Engineer specializing in intelligent defense systems, ML-powered threat detection, and secure IoT deployments.',
+  title: 'Atharva Kanawade | Software Engineer',
+  description: 'Portfolio of Atharva Kanawade — Software Engineer specializing in Agentic AI systems, full-stack development, mobile applications, and cybersecurity. Currently building production AI systems at Applied AI Consulting.',
   keywords: [
     'Atharva Kanawade',
-    'cybersecurity engineer',
+    'software engineer',
+    'agentic AI',
+    'full stack developer',
+    'mobile app developer',
+    'React Native developer',
     'machine learning engineer',
-    'AI engineer',
-    'security engineer',
-    'penetration testing',
-    'deep learning',
-    'computer vision',
+    'cybersecurity engineer',
+    'FastAPI',
+    'LangGraph',
+    'Python developer',
     'CCNA',
     'AWS',
-    'Python developer'
+    'drone racing',
   ],
-  authors: [{ name: 'Atharva Kanawade', url: 'https://github.com' }],
+  authors: [{ name: 'Atharva Kanawade', url: 'https://github.com/05Atharva' }],
   creator: 'Atharva Kanawade',
   openGraph: {
-    title: 'Atharva Kanawade - Security-Aware AI Engineer',
-    description: 'Building intelligent defense systems at the intersection of cybersecurity and machine learning',
+    title: 'Atharva Kanawade — Software Engineer',
+    description: 'Building production AI systems, full-stack applications, and mobile apps. Currently at Applied AI Consulting.',
     url: 'https://atharvakanawade.vercel.app',
     siteName: 'Atharva Kanawade Portfolio',
     locale: 'en_US',
     type: 'website',
     images: [
       {
-        url: '/og-image.png',
+        url: '/profile.jpg',
         width: 1200,
         height: 630,
-        alt: 'Atharva Kanawade Portfolio',
+        alt: 'Atharva Kanawade — Software Engineer',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Atharva Kanawade | Security-Aware AI Engineer',
-    description: 'Cybersecurity & ML Engineer specializing in intelligent defense systems',
-    images: ['/og-image.png'],
+    title: 'Atharva Kanawade | Software Engineer',
+    description: 'Agentic AI • Full-Stack • Mobile • Cybersecurity',
+    images: ['/profile.jpg'],
   },
   robots: {
     index: true,
@@ -66,11 +69,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
-      <body suppressHydrationWarning={true}>{children}</body>
+      <body className="font-body" suppressHydrationWarning={true}>{children}</body>
     </html>
   )
 }
