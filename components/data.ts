@@ -3,21 +3,11 @@
 // ═══════════════════════════════════════
 
 export const navItems = [
-  { id: 'home', label: 'Home' },
-  { id: 'about', label: 'About' },
+  { id: 'projects', label: 'Work' },
   { id: 'experience', label: 'Experience' },
-  { id: 'projects', label: 'Projects' },
-  { id: 'skills', label: 'Skills' },
-  { id: 'achievements', label: 'Achievements' },
+  { id: 'about', label: 'About' },
+  { id: 'achievements', label: 'Recognition' },
   { id: 'contact', label: 'Contact' },
-];
-
-export const typewriterRoles = [
-  'Software Engineer',
-  'Agentic AI Builder',
-  'Full-Stack Developer',
-  'Mobile App Developer',
-  'Drone Racing Champion',
 ];
 
 export const experience = [
@@ -25,7 +15,7 @@ export const experience = [
     company: 'Applied AI Consulting (AAIC)',
     role: 'Software Engineer – Trainee',
     type: 'Internship',
-    period: 'Jan 2026 – Present · 5 mos',
+    period: 'Jan 2026 · 6 months',
     location: 'Pune, Maharashtra · On-site',
     description: 'Worked on AI-driven production systems and backend workflows as part of a 6-month industry internship.',
     achievements: [
@@ -118,7 +108,7 @@ export const projects = [
     featured: true,
   },
   {
-    title: 'RagaStream 🎵',
+    title: 'RagaStream',
     subtitle: 'Personal Ad-Free Indian Music Streaming App',
     description: 'Ad-free Indian music streaming app for Android. Streams audio from YouTube via yt-dlp with zero cloud storage and zero infra cost.',
     tags: ['Mobile', 'Full Stack'],
@@ -161,7 +151,7 @@ export const projects = [
     github: 'https://github.com/05Atharva/EdgeVision-Component-Classifier',
   },
   {
-    title: 'MatchSense 🏏',
+    title: 'MatchSense',
     subtitle: 'Pre-Match IPL Prediction with Confidence-Aware ML',
     description: 'Data-driven study of IPL match predictability using only pre-match information. Features a confidence-aware CatBoost model that knows when to abstain.',
     tags: ['AI/ML'],
@@ -337,14 +327,12 @@ export const blogs = [
     subtitle: 'Cybersecurity × AI/ML',
     description: 'Deep dives into cloud security, adversarial ML defenses, threat modeling, and secure AI engineering.',
     url: 'https://defendthecloud.blogspot.com/',
-    color: 'text-arc-blue-light',
   },
   {
     title: 'CTF Chronicles',
     subtitle: 'CTF Walkthroughs & Writeups',
     description: 'Step-by-step walkthroughs of CTF challenges across web exploitation, crypto, forensics, and OSINT.',
     url: 'https://ctfchronicles.blogspot.com/',
-    color: 'text-arc-gold-light',
   },
 ];
 
@@ -354,14 +342,12 @@ export const resumes = [
     subtitle: 'Machine Learning focused',
     href: '/ATHARVA KANAWADE_ML.pdf',
     downloadName: 'Atharva_Kanawade_ML_Resume.pdf',
-    accentClass: 'bg-arc-blue/20 text-arc-blue-light',
   },
   {
     label: 'Cybersecurity Resume',
     subtitle: 'Security focused',
     href: '/ATHARVA KANAWADE Resume.pdf',
     downloadName: 'Atharva_Kanawade_Cybersecurity_Resume.pdf',
-    accentClass: 'bg-arc-gold/20 text-arc-gold-light',
   },
 ];
 

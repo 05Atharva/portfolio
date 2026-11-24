@@ -1,79 +1,54 @@
+import '@fontsource-variable/bricolage-grotesque'
+import '@fontsource-variable/instrument-sans'
 import './globals.css'
 import type { Metadata } from 'next'
+import { site } from './site'
+
+const title = site.name + ' | ' + site.role
+const homepage = site.url + '/'
+const socialImage = '/brand/social-card.png'
 
 export const metadata: Metadata = {
-  title: 'Atharva Kanawade | Software Engineer',
-  description: 'Portfolio of Atharva Kanawade — Software Engineer specializing in Agentic AI systems, full-stack development, mobile applications, and cybersecurity. Currently building production AI systems at Applied AI Consulting.',
-  keywords: [
-    'Atharva Kanawade',
-    'software engineer',
-    'agentic AI',
-    'full stack developer',
-    'mobile app developer',
-    'React Native developer',
-    'machine learning engineer',
-    'cybersecurity engineer',
-    'FastAPI',
-    'LangGraph',
-    'Python developer',
-    'CCNA',
-    'AWS',
-    'drone racing',
-  ],
-  authors: [{ name: 'Atharva Kanawade', url: 'https://github.com/05Atharva' }],
-  creator: 'Atharva Kanawade',
+  metadataBase: new URL(site.url),
+  title,
+  description: site.description,
+  authors: [{ name: site.name, url: site.url }],
+  alternates: { canonical: homepage },
+  icons: {
+    icon: [{ url: '/favicon.ico', sizes: '16x16 32x32 64x64', type: 'image/x-icon' }],
+    apple: { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+  },
   openGraph: {
-    title: 'Atharva Kanawade — Software Engineer',
-    description: 'Building production AI systems, full-stack applications, and mobile apps. Currently at Applied AI Consulting.',
-    url: 'https://atharvakanawade.vercel.app',
-    siteName: 'Atharva Kanawade Portfolio',
-    locale: 'en_US',
+    title,
+    description: site.description,
+    url: homepage,
+    siteName: site.name,
     type: 'website',
-    images: [
-      {
-        url: '/profile.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Atharva Kanawade — Software Engineer',
-      },
-    ],
+    images: [{ url: socialImage, width: 1200, height: 630, alt: title }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Atharva Kanawade | Software Engineer',
-    description: 'Agentic AI • Full-Stack • Mobile • Cybersecurity',
-    images: ['/profile.jpg'],
+    title,
+    description: site.description,
+    images: [socialImage],
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-  icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
-  },
-  manifest: '/site.webmanifest',
+  robots: { index: true, follow: true },
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+const restoreTheme = `try {
+  const theme = localStorage.getItem('portfolio-theme');
+  if (theme === 'light' || theme === 'dark') {
+    document.documentElement.dataset.theme = theme;
+  }
+} catch {}`
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" suppressHydrationWarning>
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script dangerouslySetInnerHTML={{ __html: restoreTheme }} />
       </head>
-      <body className="font-body" suppressHydrationWarning={true}>{children}</body>
+      <body>{children}</body>
     </html>
   )
 }
