@@ -9,7 +9,7 @@ export default function ContactSection() {
         <div className="contact-panel">
           <div className="section-heading" data-section-heading>
             <h2 id="contact-title">Let’s connect</h2>
-            <p>I’m open to software engineering opportunities and collaborations.</p>
+            <p>I’m happy to connect about software engineering and potential collaborations.</p>
           </div>
           <div className="contact-actions">
             <a href={'mailto:' + site.email} className="button button-primary">

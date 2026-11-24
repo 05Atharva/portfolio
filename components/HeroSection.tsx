@@ -7,10 +7,10 @@ export default function HeroSection() {
   return (
     <section id="home" className="hero shell" tabIndex={-1} aria-labelledby="hero-name">
       <div className="hero-copy">
-        <p className="hero-role">{site.role}</p>
+        <p className="hero-role">{site.role} at {site.employer}</p>
         <h1 id="hero-name">Atharva <span>Kanawade</span></h1>
         <p className="hero-description">
-          I build multi-agent AI workflows, the backends that run them, and mobile apps people can use.
+          I build software around shop-floor workflows and the data they generate. My background includes multi-agent AI, backend systems, and mobile apps.
         </p>
         <div className="hero-actions">
           <a href="#projects" className="button button-primary">View work</a>

@@ -27,6 +27,7 @@ const structuredData = {
       name: site.name,
       url: homepage,
       jobTitle: site.role,
+      worksFor: { '@type': 'Organization', name: site.employer },
       image: site.url + '/profile-opt.jpg',
       sameAs: [site.github, site.linkedin],
     },

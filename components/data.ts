@@ -2,6 +2,8 @@
 // Portfolio Data — All content lives here
 // ═══════════════════════════════════════
 
+import { site } from '@/app/site';
+
 export const navItems = [
   { id: 'projects', label: 'Work' },
   { id: 'experience', label: 'Experience' },
@@ -12,6 +14,21 @@ export const navItems = [
 
 export const experience = [
   {
+    company: site.employer,
+    role: site.role,
+    type: 'Full-time',
+    period: 'Aug 2026 – Present',
+    location: 'Pune, Maharashtra',
+    description: 'I work on software projects informed by shop-floor processes and the data they generate.',
+    achievements: [
+      'Took ownership of projects during my first month at Golain',
+      'Spoke with shop-floor teams to understand their workflows and where data is collected',
+      'Worked through system designs, data flows, and architecture with the engineering team',
+    ],
+    focus: '',
+    tech: [],
+  },
+  {
     company: 'Applied AI Consulting (AAIC)',
     role: 'Software Engineer – Trainee',
     type: 'Internship',
@@ -20,7 +37,7 @@ export const experience = [
     description: 'Worked on AI-driven production systems and backend workflows as part of a 6-month industry internship.',
     achievements: [
       'Contributed to multi-agent AI system workflows and orchestration',
-      'Improved test coverage to ~70% across multiple modules',
+      'Wrote tests for about 40 modules and brought test coverage to 75%',
       'Validated SQL to PostgreSQL migration including tables, indexes, constraints, and procedures',
       'Investigated live production issues using AWS CloudWatch and RDS logs',
       'Worked with LangGraph, WebSockets, FastAPI, and AI models such as OpenAI Whisper and Gemini 2.5',
@@ -61,7 +78,7 @@ export const experience = [
     company: 'Team Vajra, MMCOE',
     role: 'AI-ML Head – UAV & Drone Projects',
     type: 'Leadership',
-    period: '2023 – Present',
+    period: 'Started in 2023',
     location: '',
     description: '',
     achievements: [
@@ -310,7 +327,8 @@ export const additionalTech = [
 
 export const certifications = [
   { name: 'Cisco Certified Network Associate (CCNA)', issuer: 'Cisco', date: 'May 2025' },
-  { name: 'Google Cybersecurity Professional Certificate', issuer: 'Google & Coursera', date: 'Jul 2024' },
+  { name: 'Machine Learning For All', issuer: 'University of London', date: 'Feb 2024' },
+  { name: 'Google Cybersecurity Professional Certificate', issuer: 'Google', date: 'Jan 2024' },
   { name: 'Network Essentials', issuer: 'Cisco', date: 'Jun 2024' },
 ];
 

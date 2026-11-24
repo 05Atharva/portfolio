@@ -1,3 +1,5 @@
+import { site } from '@/app/site'
+
 export default function AboutSection() {
   return (
     <section id="about" className="section section-rule about-section" tabIndex={-1} aria-labelledby="about-title">
@@ -6,14 +8,12 @@ export default function AboutSection() {
           <h2 id="about-title">About me</h2>
         </div>
         <div className="about-copy">
-          <p className="about-lead">I’m an Electronics &amp; Telecommunication Engineering student in Pune with a 9.02 CGPA.</p>
+          <p className="about-lead">At {site.employer}, I learn how shop-floor teams work and use that context to design software around their processes.</p>
           <p>
-            At Applied AI Consulting, I worked on multi-agent workflows and production backends.
-            With Team Vajra, I led AI and ML work on UAV projects and built FPV racing drones.
+            Before joining {site.employer}, I worked on multi-agent AI workflows and production backends at Applied AI Consulting. With Team Vajra, I led AI and ML work on UAV projects and built FPV racing drones.
           </p>
           <p>
-            My engineering work spans cloud debugging, secure authentication, and tuning how a
-            racing drone responds in flight. In each setting, I test how the system behaves where it will actually be used.
+            I studied Electronics &amp; Telecommunication Engineering at Marathwada Mitra Mandal’s College of Engineering in Pune from 2022 to 2026 and earned an 8.41 CGPA.
           </p>
           <a className="text-link" href="#skills">Explore technical skills</a>
         </div>
