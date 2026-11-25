@@ -11,7 +11,10 @@ function isLightTheme() {
   return theme ? theme === 'light' : window.matchMedia('(prefers-color-scheme: light)').matches
 }
 
-export default function SiteHeader({ blogPage = false }: { blogPage?: boolean }) {
+export default function SiteHeader({ page = 'home' }: { page?: 'home' | 'blog' | 'work' }) {
+  const isHome = page === 'home'
+  const blogPage = page === 'blog'
+  const currentPageLink = page === 'work' ? 'projects' : 'blog'
   const [isLight, setIsLight] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
@@ -40,7 +43,7 @@ export default function SiteHeader({ blogPage = false }: { blogPage?: boolean })
   }, [])
 
   useEffect(() => {
-    if (blogPage) return
+    if (!isHome) return
 
     const sections = ['home', ...navItems.map(({ id }) => id)]
       .map((id) => document.getElementById(id))
@@ -71,7 +74,7 @@ export default function SiteHeader({ blogPage = false }: { blogPage?: boolean })
       window.removeEventListener('resize', queueUpdate)
       window.cancelAnimationFrame(frame)
     }
-  }, [blogPage])
+  }, [isHome])
 
   function toggleTheme() {
     const nextTheme = isLightTheme() ? 'dark' : 'light'
@@ -92,23 +95,32 @@ export default function SiteHeader({ blogPage = false }: { blogPage?: boolean })
       }
     }}>
       <div className="shell header-inner">
-        <a href={blogPage ? '/' : '#home'} className="brand-link"
+        <a href={isHome ? '#home' : '/'} className="brand-link"
           data-analytics-event={blogPage ? 'blog_to_portfolio' : undefined} onClick={() => setMenuOpen(false)}>
           <Image src="/brand/ak-mark.svg" width={39} height={39} alt="" />
           <span>{site.name}</span>
         </a>
         <nav className="site-nav" id="site-nav" ref={menu} data-open={menuOpen} aria-label="Main navigation">
-          {navItems.map(({ id, label }) => (
-            <a
-              key={id}
-              href={id === 'blog' ? '/blog' : (blogPage ? '/#' : '#') + id}
-              aria-current={blogPage && id === 'blog' ? 'page' : activeSection === id ? 'location' : undefined}
-              data-analytics-event={blogPage && id === 'projects' ? 'blog_to_work' : undefined}
-              onClick={() => setMenuOpen(false)}
-            >
-              {label}
-            </a>
-          ))}
+          {navItems.map(({ id, label }) => {
+            let href = (isHome ? '#' : '/#') + id
+            if (id === 'blog') href = '/blog'
+            if (id === 'projects' && !isHome) href = '/work'
+            const current = isHome
+              ? activeSection === id && 'location'
+              : currentPageLink === id && 'page'
+
+            return (
+              <a
+                key={id}
+                href={href}
+                aria-current={current || undefined}
+                data-analytics-event={blogPage && id === 'projects' ? 'blog_to_work' : undefined}
+                onClick={() => setMenuOpen(false)}
+              >
+                {label}
+              </a>
+            )
+          })}
         </nav>
         <div className="header-controls">
           <button className="icon-button theme-button" type="button" onClick={toggleTheme}

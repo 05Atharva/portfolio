@@ -1,58 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { AudioLines, ChevronDown, CircuitBoard, Github, Layers3, ShieldCheck } from 'lucide-react'
-import type { LucideIcon } from 'lucide-react'
 import { filterTags, projects } from './data'
-
-const illustrations: Partial<Record<string, { icon: LucideIcon; className: string }>> = {
-  'Cooking Application': { icon: Layers3, className: 'layers' },
-  PRECURSOR: { icon: CircuitBoard, className: 'trace' },
-  RagaStream: { icon: AudioLines, className: 'wave' },
-  ARTEMIS: { icon: ShieldCheck, className: 'shield' },
-}
-
-type Project = (typeof projects)[number]
-
-function ProjectCard({ project }: { project: Project }) {
-  const illustration = illustrations[project.title]
-  const Illustration = illustration?.icon
-
-  return (
-    <article className="project-card">
-      {Illustration && (
-        <div className={'project-visual visual-' + illustration.className} aria-hidden="true">
-          <span className="visual-guide visual-guide-outer" />
-          <span className="visual-guide visual-guide-inner" />
-          <Illustration size={54} strokeWidth={1.25} />
-        </div>
-      )}
-      <div className="project-body">
-        <p className="project-tags">{project.tags.join(' / ')}</p>
-        <h3>{project.title}</h3>
-        <p className="project-description">{project.description}</p>
-        <div className="project-links">
-          <details className="disclosure">
-            <summary>Project details <ChevronDown size={16} aria-hidden="true" /></summary>
-            <p>{project.subtitle}</p>
-            <ul className="detail-list">
-              {project.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
-            </ul>
-            <ul className="chip-list" aria-label="Technologies">
-              {project.tech.map((tool) => <li key={tool}>{tool}</li>)}
-            </ul>
-          </details>
-          {project.github && (
-            <a className="text-link source-link" href={project.github} target="_blank" rel="noreferrer"
-              aria-label={'Source code for ' + project.title}>
-              <Github size={16} aria-hidden="true" /> Source code
-            </a>
-          )}
-        </div>
-      </div>
-    </article>
-  )
-}
+import ProjectCard from './ProjectCard'
 
 export default function ProjectsSection() {
   const [filter, setFilter] = useState('Featured')
@@ -82,6 +32,7 @@ export default function ProjectsSection() {
         <div className="project-grid" id="project-results">
           {visibleProjects.map((project) => <ProjectCard key={project.title} project={project} />)}
         </div>
+        <a className="button button-secondary project-directory-link" href="/work">Browse the project directory</a>
       </div>
     </section>
   )

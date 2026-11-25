@@ -126,7 +126,7 @@ function BlogArticle({ post }: { post: Post }) {
           <a className="button button-primary" data-analytics-event="blog_email_click" href={'mailto:' + site.email}>
             <Mail size={18} aria-hidden="true" /> Email me
           </a>
-          <a className="button button-secondary" data-analytics-event="blog_to_work" href="/#projects">View work</a>
+          <a className="button button-secondary" data-analytics-event="blog_to_work" href="/work">View work</a>
           <ResumeButton />
         </div>
         <a className="text-link article-email" href={'mailto:' + site.email} data-analytics-event="blog_email_click">

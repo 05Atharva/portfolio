@@ -47,6 +47,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <link rel="describedby" href="/llms.txt" />
         <GoogleAnalytics />
         <script dangerouslySetInnerHTML={{ __html: restoreTheme }} />
       </head>
