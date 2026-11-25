@@ -2,6 +2,7 @@ import '@fontsource-variable/bricolage-grotesque'
 import '@fontsource-variable/instrument-sans'
 import './globals.css'
 import type { Metadata } from 'next'
+import GoogleAnalytics from '@/components/GoogleAnalytics'
 import { site } from './site'
 
 const title = site.name + ' | ' + site.role
@@ -46,6 +47,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <GoogleAnalytics />
         <script dangerouslySetInnerHTML={{ __html: restoreTheme }} />
       </head>
       <body>{children}</body>

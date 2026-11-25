@@ -7,6 +7,7 @@ import ExperienceSection from './ExperienceSection'
 import AboutSection from './AboutSection'
 import SkillsSection from './SkillsSection'
 import AchievementsSection from './AchievementsSection'
+import BlogSection from './BlogSection'
 import ContactSection from './ContactSection'
 import { ResumeDialog } from './ResumeDialog'
 import SectionMotion from './SectionMotion'
@@ -23,6 +24,7 @@ export default function Portfolio() {
         <AboutSection />
         <SkillsSection />
         <AchievementsSection />
+        <BlogSection />
         <ContactSection />
       </main>
       <footer className="site-footer">

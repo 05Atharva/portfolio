@@ -9,6 +9,7 @@ export const navItems = [
   { id: 'experience', label: 'Experience' },
   { id: 'about', label: 'About' },
   { id: 'achievements', label: 'Recognition' },
+  { id: 'blog', label: 'Blog' },
   { id: 'contact', label: 'Contact' },
 ];
 

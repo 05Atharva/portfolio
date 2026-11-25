@@ -25,6 +25,7 @@ This is a React and TypeScript site using the Next.js App Router and static expo
 ## Maintenance
 
 - Keep project, experience, skills, and credentials grounded in `components/data.ts`. Confirm time-sensitive dates, role status, metrics, and links before changing them.
+- Follow the article and GA4 publishing instructions in `content/blog/README.md`. Keep draft articles and images private until publication.
 - Preserve existing hash anchors and résumé downloads. Use server-rendered markup for core information and client components for interaction.
 - Keep discoverability settings in `app/site.ts`, `app/layout.tsx`, the homepage structured data, and the exported robots and sitemap routes. If the production hostname changes, update the shared origin.
 - Run `npm run build`. Check desktop and phone widths, both themes, keyboard navigation, reduced motion, project filters, résumé downloads, and the exported metadata and assets before shipping.

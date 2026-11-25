@@ -37,6 +37,7 @@ export function ResumeDialog() {
       <div className="resume-options">
         {resumes.map((resume) => (
           <a key={resume.href} href={resume.href} download={resume.downloadName} className="resume-option"
+            data-analytics-event="resume_download"
             onClick={(event) => event.currentTarget.closest('dialog')?.close()}>
             <span><strong>{resume.label}</strong><small>{resume.subtitle} · PDF</small></span>
             <Download size={20} aria-hidden="true" />

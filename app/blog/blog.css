@@ -1,0 +1,190 @@
+.blog-shell, .article-shell {
+  padding-block: clamp(3rem, 8vw, 6.5rem);
+}
+
+.blog-intro {
+  max-width: 52rem;
+  margin-bottom: clamp(1.65rem, 4vw, 2.75rem);
+}
+
+.blog-intro h1 {
+  font-size: clamp(3.1rem, 7vw, 6.2rem);
+  font-weight: 740;
+  letter-spacing: -.072em;
+  line-height: .98;
+  overflow-wrap: anywhere;
+}
+
+.blog-intro > p:last-child {
+  max-width: 42rem;
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: clamp(1.06rem, 1.85vw, 1.28rem);
+}
+
+.blog-empty {
+  padding-block: 1.35rem;
+  border-block: 1px solid var(--line);
+  color: var(--muted);
+}
+
+.blog-elsewhere {
+  margin-top: clamp(2.6rem, 6vw, 5rem);
+}
+
+.blog-elsewhere h2, .article-end h2, .article-contact h2 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  letter-spacing: -.045em;
+}
+
+.blog-elsewhere ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.blog-elsewhere li {
+  padding: .7rem 1.1rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: .65rem;
+  background: var(--surface);
+}
+
+.blog-elsewhere p { color: var(--muted); }
+
+.article-shell {
+  max-width: 56rem;
+}
+
+.article-intro > .text-link {
+  margin-bottom: 1rem;
+}
+
+.article-intro h1 {
+  font-size: clamp(2.65rem, 6vw, 5rem);
+}
+
+.article-byline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem .85rem;
+  align-items: center;
+  margin-bottom: .75rem;
+  color: var(--muted);
+  font-size: .93rem;
+}
+
+.article-byline span {
+  font-weight: 650;
+  color: var(--brass);
+}
+
+.article-cover img, .article-prose figure img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 42rem;
+  margin-inline: auto;
+  border: 1px solid var(--line);
+  border-radius: .65rem;
+  object-fit: contain;
+}
+
+.article-cover figcaption, .article-prose figcaption {
+  margin-top: .55rem;
+  color: var(--muted);
+  font-size: .88rem;
+  text-align: center;
+}
+
+.article-prose {
+  max-width: 43rem;
+  margin: clamp(1.8rem, 4vw, 3rem) auto 0;
+  color: var(--ink);
+  font-size: clamp(1.0625rem, 1.65vw, 1.18rem);
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+
+.article-prose > * + * { margin-top: 1.12em; }
+
+.article-prose h2, .article-prose h3, .article-prose h4 {
+  line-height: 1.16;
+  letter-spacing: -.04em;
+}
+
+.article-prose h2 { font-size: clamp(1.75rem, 4vw, 2.45rem); margin-top: 1.6em; }
+.article-prose h3 { font-size: clamp(1.45rem, 3vw, 1.9rem); margin-top: 1.38em; }
+.article-prose li + li { margin-top: .3rem; }
+.article-prose ul, .article-prose ol { padding-inline-start: 1.5em; }
+
+.article-prose a {
+  color: var(--ice);
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+
+.article-prose blockquote {
+  margin-inline: 0;
+  padding: .7rem 1rem;
+  border-inline-start: 3px solid var(--brass);
+  color: var(--muted);
+  background: var(--surface);
+}
+
+.article-prose :not(pre) > code {
+  padding: .15em .26em;
+  border-radius: .24rem;
+  background: var(--surface-strong);
+}
+
+.article-prose pre {
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: .65rem;
+  background: var(--surface);
+  overflow-x: auto;
+}
+
+.article-prose pre, .article-prose code {
+  font-family: var(--mono);
+  font-size: .9em;
+}
+
+.article-prose .article-table { overflow-x: auto; }
+.article-prose table { width: 100%; border-collapse: collapse; }
+.article-prose th, .article-prose td {
+  border: 1px solid var(--line);
+  padding: .35em .55em;
+  text-align: start;
+}
+.article-prose th { background: var(--surface); }
+
+.article-end, .article-contact {
+  margin-top: clamp(2.7rem, 6vw, 4.5rem);
+}
+
+.article-end {
+  padding-top: clamp(1.5rem, 3vw, 2.6rem);
+  border-top: 1px solid var(--line);
+}
+
+.article-end h2 { margin-bottom: 1rem; }
+.article-end > .text-link { margin-top: .35rem; }
+
+.article-contact {
+  padding: clamp(1.25rem, 4vw, 2.4rem);
+  border: 1px solid var(--line-strong);
+  border-radius: .9rem;
+  background: var(--surface);
+}
+.article-contact p { margin-block: .6rem 1.2rem; color: var(--muted); }
+.article-contact .article-email { overflow-wrap: anywhere; margin-top: .3rem; }
+
+@media (max-width: 42rem) {
+  .blog-elsewhere ul { grid-template-columns: 1fr; }
+}

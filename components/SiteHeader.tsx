@@ -11,7 +11,7 @@ function isLightTheme() {
   return theme ? theme === 'light' : window.matchMedia('(prefers-color-scheme: light)').matches
 }
 
-export default function SiteHeader() {
+export default function SiteHeader({ blogPage = false }: { blogPage?: boolean }) {
   const [isLight, setIsLight] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
@@ -40,6 +40,8 @@ export default function SiteHeader() {
   }, [])
 
   useEffect(() => {
+    if (blogPage) return
+
     const sections = ['home', ...navItems.map(({ id }) => id)]
       .map((id) => document.getElementById(id))
       .filter((section) => section !== null)
@@ -69,7 +71,7 @@ export default function SiteHeader() {
       window.removeEventListener('resize', queueUpdate)
       window.cancelAnimationFrame(frame)
     }
-  }, [])
+  }, [blogPage])
 
   function toggleTheme() {
     const nextTheme = isLightTheme() ? 'dark' : 'light'
@@ -90,7 +92,8 @@ export default function SiteHeader() {
       }
     }}>
       <div className="shell header-inner">
-        <a href="#home" className="brand-link" onClick={() => setMenuOpen(false)}>
+        <a href={blogPage ? '/' : '#home'} className="brand-link"
+          data-analytics-event={blogPage ? 'blog_to_portfolio' : undefined} onClick={() => setMenuOpen(false)}>
           <Image src="/brand/ak-mark.svg" width={39} height={39} alt="" />
           <span>{site.name}</span>
         </a>
@@ -98,8 +101,9 @@ export default function SiteHeader() {
           {navItems.map(({ id, label }) => (
             <a
               key={id}
-              href={'#' + id}
-              aria-current={activeSection === id ? 'location' : undefined}
+              href={id === 'blog' ? '/blog' : (blogPage ? '/#' : '#') + id}
+              aria-current={blogPage && id === 'blog' ? 'page' : activeSection === id ? 'location' : undefined}
+              data-analytics-event={blogPage && id === 'projects' ? 'blog_to_work' : undefined}
               onClick={() => setMenuOpen(false)}
             >
               {label}
