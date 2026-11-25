@@ -1,4 +1,4 @@
-import { ChevronDown, Github, Linkedin, Mail, MapPin } from 'lucide-react'
+import { Github, Linkedin, Mail, MapPin } from 'lucide-react'
 import { site } from '@/app/site'
 import { ResumeButton } from './ResumeDialog'
 
@@ -27,10 +27,6 @@ export default function ContactSection() {
             </a>
             <span><MapPin size={17} aria-hidden="true" /> {site.location}</span>
           </div>
-          <details className="disclosure phone-disclosure">
-            <summary>Show phone number <ChevronDown size={16} aria-hidden="true" /></summary>
-            <p>+91 975385785</p>
-          </details>
         </div>
       </div>
     </section>
